@@ -4,15 +4,13 @@
         "name": "M2 LMFI",
         "code": "28347",
         "courses": [
-          "Theorie des ensembles CM01",
-          "Theorie des ensembles TD01",
+          "Theorie des ensembles",
           "Theorie des Modeles : cours specialise CM01",
           "Theorie des modeles TD01",
           "Theorie categories & algebres homotopiques, categories sup CM01",
           "Programmation fonctionnelle et preuves formelles en coq TP01",
           "Calculabilite et incompletude CM01",
-          "Theorie de la demonstration CM01",
-          "Theorie de la demonstration TD01"
+          "Theorie de la demonstration"
         ]
       },
       {
