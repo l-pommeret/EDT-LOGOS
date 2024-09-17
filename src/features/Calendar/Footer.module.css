@@ -1,0 +1,11 @@
+.footer {
+  padding-top: 1rem;
+}
+
+.footer > div {
+  margin-block: 0.5rem;
+  padding-inline-start: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

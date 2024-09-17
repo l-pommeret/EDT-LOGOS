@@ -1,0 +1,64 @@
+.menu {
+  display: none;
+  margin-block: 1rem;
+  font-size: 110%;
+}
+
+.menu.expanded {
+  display: block;
+}
+
+.menu h2 {
+  margin-block: .5rem;
+  font-size: medium;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.menu nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-inline-start: 1.5%;
+}
+
+.menu nav a {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  padding-block: 0.25rem;
+  padding-inline: .75rem;
+  border: 1px solid;
+  border-radius: .25rem;
+  font-size: large;
+}
+
+.menu a.active {
+  background-color: var(--brand);
+  color: white;
+  font-weight: 600;
+}
+
+.expander {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+  background-color: var(--brand);
+  color: white;
+  font-size: large;
+  border: 0;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+/* When the screen is large enough, display the menu regardless of .expanded */
+@media (min-width: 66ch) {
+  .menu {
+    display: block;
+  }
+
+  .expander {
+    display: none;
+  }
+}

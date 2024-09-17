@@ -1,0 +1,102 @@
+{
+  "$id": "TODO",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalItems": false,
+  "description": "The root schema comprises the entire JSON document.",
+  "examples": [
+    [
+      {
+        "code": 6552,
+        "label": "supr/modifiés",
+        "parcours": "mathinfo",
+        "title": "AncVersion",
+        "year": "l1"
+      },
+      {
+        "code": 6699,
+        "label": "groupe 1",
+        "parcours": "mathinfo",
+        "title": "MathInfo 1",
+        "year": "l1"
+      }
+    ]
+  ],
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "annexe": {
+        "description": "Définit si un groupe est considéré comme 'annexe' ou pas.",
+        "title": "Annexe",
+        "type": "boolean"
+      },
+      "code": {
+        "description": "Le code ADE du groupe.",
+        "title": "Code",
+        "type": [
+          "integer",
+          "string"
+        ]
+      },
+      "initialDate": {
+        "description": "La première date qui doit être affichée dans le calendrier pour ce groupe.",
+        "title": "Date initiale",
+        "type": "string"
+      },
+      "label": {
+        "description": "Un nom court à afficher dans les boutons et autres.",
+        "examples": [
+          "groupe 2"
+        ],
+        "title": "Nom affiché",
+        "type": "string"
+      },
+      "page": {
+        "description": "La liste des pages sur lesquelles ce groupe doit apparaître.",
+        "title": "Pages",
+        "type": "array",
+        "examples": [
+          "licence",
+          "lcao"
+        ],
+        "items": {
+          "type": "string"
+        }
+      },
+      "parcours": {
+        "description": "Le code du parcours (filière sans l'année) du cours.",
+        "examples": [
+          "mathinfo",
+          "math"
+        ],
+        "title": "Parcours",
+        "type": "string"
+      },
+      "title": {
+        "description": "Le titre du groupe, contient le parcours et l'année.",
+        "examples": [
+          "MathInfo 1"
+        ],
+        "title": "Titre",
+        "type": "string"
+      },
+      "year": {
+        "description": "Le code de l'année du groupe.",
+        "examples": [
+          "l1",
+          "l2"
+        ],
+        "title": "Année",
+        "type": "string"
+      }
+    },
+    "required": [
+      "code",
+      "title",
+      "label",
+      "parcours",
+      "year"
+    ]
+  },
+  "title": "Schema for calendars",
+  "type": "array"
+}

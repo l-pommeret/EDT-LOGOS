@@ -1,0 +1,44 @@
+.choice {
+  font-size: large;
+}
+
+.choice button {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.choice p[data-error] {
+  color: darkred;
+  font-weight: 600;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  gap: 1rem;
+}
+
+.list strong {
+  display: block;
+  padding: 0.5rem;
+}
+
+.list details {
+  border: 1px solid var(--brand);
+}
+
+.list summary {
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: var(--brand);
+  color: white;
+}
+
+.list details label {
+  display: block;
+  margin-left: 0.25rem;
+}

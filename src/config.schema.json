@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "definitions": {
+        "hsl": {
+            "additionalProperties": false,
+            "description": "A color in the HSL format.",
+            "properties": {
+                "h": {
+                    "description": "The hue value of the color.",
+                    "maximum": 360,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "l": {
+                    "description": "The lightness value of the color.",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "s": {
+                    "description": "The saturation value of the color.",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "h",
+                "s",
+                "l"
+            ],
+            "type": "object"
+        }
+    },
+    "description": "Configuration options for the calendar application.",
+    "properties": {
+        "bgPalette": {
+            "description": "An array of colors to use in the background palette.",
+            "items": {
+                "$ref": "#/definitions/hsl"
+            },
+            "type": "array"
+        },
+        "codePalette": {
+            "description": "An array of colors to use in the code palette.",
+            "items": {
+                "$ref": "#/definitions/hsl"
+            },
+            "type": "array"
+        },
+        "defaultInitialDate": {
+            "description": "The default initial date for the calendar.",
+            "format": "date",
+            "type": "string"
+        },
+        "parcoursIcons": {
+            "additionalProperties": {
+                "description": "The icon of a parcours.",
+                "type": "string"
+            },
+            "description": "A mapping of parcours codes to their icons.",
+            "type": "object"
+        },
+        "parcoursTitles": {
+            "additionalProperties": {
+                "description": "The title of a parcours.",
+                "type": "string"
+            },
+            "description": "A mapping of parcours codes to their titles.",
+            "type": "object"
+        }
+    },
+    "required": [
+        "defaultInitialDate",
+        "parcoursTitles",
+        "bgPalette"
+    ],
+    "type": "object"
+}

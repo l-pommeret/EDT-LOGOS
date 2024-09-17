@@ -1,0 +1,33 @@
+.menu {
+  margin-block-end: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.check {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 2px 1px var(--muted);
+}
+
+.options {
+  margin-block: .5rem;
+
+  & label {
+    margin-block: .5rem;
+    align-items: center;
+    display: flex;
+    column-gap: .5rem;
+  }
+
+  & input[type="text"] {
+    width: 100%;
+    padding: .25rem;
+    border-radius: .125rem;
+    border: 1px solid var(--muted);
+  }
+}

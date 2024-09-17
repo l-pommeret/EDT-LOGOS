@@ -1,0 +1,172 @@
+{
+  "bgPalette": [
+    {
+      "h": 201,
+      "l": 60,
+      "s": 56
+    },
+    {
+      "h": 45,
+      "l": 60,
+      "s": 90
+    },
+    {
+      "h": 70,
+      "l": 60,
+      "s": 50
+    },
+    {
+      "h": 1,
+      "l": 60,
+      "s": 70
+    },
+    {
+      "h": 31,
+      "l": 60,
+      "s": 96
+    },
+    {
+      "h": 312,
+      "l": 60,
+      "s": 60
+    },
+    {
+      "h": 201,
+      "l": 30,
+      "s": 56
+    },
+    {
+      "h": 45,
+      "l": 30,
+      "s": 90
+    },
+    {
+      "h": 70,
+      "l": 30,
+      "s": 50
+    },
+    {
+      "h": 1,
+      "l": 30,
+      "s": 70
+    },
+    {
+      "h": 31,
+      "l": 30,
+      "s": 96
+    },
+    {
+      "h": 312,
+      "l": 30,
+      "s": 60
+    },
+    {
+      "h": 201,
+      "l": 40,
+      "s": 56
+    },
+    {
+      "h": 45,
+      "l": 40,
+      "s": 90
+    },
+    {
+      "h": 70,
+      "l": 40,
+      "s": 50
+    },
+    {
+      "h": 1,
+      "l": 40,
+      "s": 70
+    },
+    {
+      "h": 31,
+      "l": 40,
+      "s": 96
+    },
+    {
+      "h": 312,
+      "l": 40,
+      "s": 60
+    }
+  ],
+  "codePalette": [
+    {
+      "h": 201,
+      "l": 80,
+      "s": 56
+    },
+    {
+      "h": 45,
+      "l": 80,
+      "s": 80
+    },
+    {
+      "h": 70,
+      "l": 80,
+      "s": 50
+    },
+    {
+      "h": 1,
+      "l": 80,
+      "s": 70
+    },
+    {
+      "h": 31,
+      "l": 80,
+      "s": 96
+    },
+    {
+      "h": 312,
+      "l": 80,
+      "s": 60
+    }
+  ],
+  "defaultInitialDate": "2024-09-02",
+  "parcoursIcons": {
+    "chimie": "flask-vial",
+    "cupge": "building-columns",
+    "dlp-cm": "atom",
+    "eco": "chart-line",
+    "eidd": "wrench",
+    "epc": "chalkboard-user",
+    "geo": "map",
+    "hist": "landmark-dome",
+    "info": "computer",
+    "ingemath": "gears",
+    "lcao": "language",
+    "math": "calculator",
+    "mathens": "chalkboard-user",
+    "mathinfo": "database",
+    "miashs": "newspaper",
+    "phys": "bolt",
+    "sdv": "microscope",
+    "socio": "comments",
+    "step": "globe",
+    "zz-halle": "building"
+  },
+  "parcoursTitles": {
+    "chimie": "Chimie",
+    "cupge": "CUPGE",
+    "dlp-cm": "DLPC/DLPM",
+    "eco": "Economie",  
+    "eidd": "EIDD",
+    "epc": "Enseignement Phys/Chim",
+    "geo": "Géographie",
+    "hist": "Histoire",
+    "info": "Informatique",
+    "infoDL": "Info-(Bio/Jap)",
+    "ingemath": "Ingénieur Math",
+    "lcao": "LCAO",
+    "math": "Maths",
+    "mathens": "Maths pour l'enseignement",
+    "mathinfo": "Maths-Info",
+    "miashs": "MIASHS",
+    "phys": "Physique",
+    "sdv": "Sciences de la Vie",
+    "socio": "Sociologie",
+    "step": "S.T.E.P",
+    "zz-halle": "Halle"  
+  }
+}

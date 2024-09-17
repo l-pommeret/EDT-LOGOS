@@ -1,0 +1,27 @@
+pdftotext -layout Ademiashs.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u >miashsgenerique.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' miashsgenerique.csv
+
+pdftotext -layout Ademiashsling.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u  >miashsling.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' miashsling.csv
+
+pdftotext -layout Adel1l2math.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u  >l1l2math.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' l1l2math.csv
+
+pdftotext -layout Adel3math.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u >l3math.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' l3math.csv
+
+pdftotext -layout Adel1l2mathinfo.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u >l1l2mathinfo_old.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' l1l2mathinfo_old.csv
+
+pdftotext -layout Adel3mathinfo.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u >l3mathinfo_old.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' l3mathinfo_old.csv
+
+pdftotext -layout Adeinfo.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u >info.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' info.csv
+
+pdftotext -layout Adephy.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^,.*,' | grep -v ',Nom,Code' | sed -r 's/^,/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u >phy.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' phy.csv
+
+pdftotext -layout AdeueUFRlinguistique.pdf - | sed '$d' | sed -r 's/ +{2}/,/g' | grep '^.*,' | grep -v ',Nom,Code' | sed -r 's/^/"/g' | sed -r 's/(,)([A-Z]{2})/"\1"\2/g'| sed -r 's/$/"/g' |sort -u >ueling.csv
+sed -i -e 's/ﬃ/ffi/g' -e 's/ﬁ/fi/g' -e 's/ﬀ/ff/g' -e 's/ﬂ/fl/g' -e 's/ﬄ/ffl/g' ueling.csv
+

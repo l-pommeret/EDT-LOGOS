@@ -1,0 +1,13 @@
+[
+   {"code": "6534", "title": "DLPC", "label": "DLPC", "parcours": "dlp-cm", "year": "l1", "page": ["licence"]} ,
+   {"code": "11220", "title": "DLPM", "label": "DLPM", "parcours": "dlp-cm", "year": "l1", "page": ["licence"]} ,
+   {"code": "obso-dlp-cml1", "title": "AncVersion", "label": "obsolète", "parcours": "dlp-cm", "year": "l1", "page": ["licence"], "annexe": true} ,
+   {"code": "6147", "title": "L2DLPC", "label": "DLPC", "parcours": "dlp-cm", "year": "l2", "page": ["licence"]} ,
+   {"code": "3465", "title": "L2DLPM", "label": "DLPM", "parcours": "dlp-cm", "year": "l2", "page": ["licence"]} ,
+   {"code": "obso-dlp-cml2", "title": "AncVersion", "label": "obsolète", "parcours": "dlp-cm", "year": "l2", "page": ["licence"], "annexe": true} ,
+   {"code": "6489", "title": "DLPC", "label": "DLPC", "parcours": "dlp-cm", "year": "l3", "page": ["licence"]} ,
+   {"code": "6491", "title": "DLPC", "label": "DLPC-GrA", "parcours": "dlp-cm", "year": "l3", "page": ["licence"]} ,
+   {"code": "6492", "title": "DLPC", "label": "DLPC-GrB", "parcours": "dlp-cm", "year": "l3", "page": ["licence"]} ,
+   {"code": "14337", "title": "L3DLPM", "label": "DLPM", "parcours": "dlp-cm", "year": "l3", "page": ["licence"]} ,
+   {"code": "obso-dlp-cml3", "title": "AncVersion", "label": "obsolète", "parcours": "dlp-cm", "year": "l3", "page": ["licence"], "annexe": true}
+]

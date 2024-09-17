@@ -1,0 +1,16 @@
+[
+   {"code": "AnglaisL3ufrmath.1", "title": "L3MFA Anglais", "label": "Angl.1", "parcours": "mathens", "year": "l3", "page": ["licence"]} ,
+   {"code": "AnglaisL3ufrmath.2", "title": "L3MFA Anglais", "label": "Angl.2", "parcours": "mathens", "year": "l3", "page": ["licence"]} ,
+   {"code": "AnglaisL3ufrmath.3", "title": "L3MFA Anglais", "label": "Angl.3", "parcours": "mathens", "year": "l3", "page": ["licence"]} ,
+   {"code": "AnglaisL3ufrmath.4", "title": "L3MFA Anglais", "label": "Angl.4", "parcours": "mathens", "year": "l3", "page": ["licence"]} ,
+   {"code": "AnglaisL3ufrmath.5", "title": "L3MFA Anglais", "label": "Angl.5", "parcours": "mathens", "year": "l3", "page": ["licence"]} ,
+   {"code": "AnglaisL3ufrmath.6", "title": "L3MFA Anglais", "label": "Angl.6", "parcours": "mathens", "year": "l3", "page": ["licence"]} ,
+   {"code": "47465", "title": "MathEns", "label": "MathEns1", "parcours": "mathens", "year": "l3", "page": ["licence"]} ,
+   {"code": "obso-mathensl3", "title": "AncVersion", "label": "obsolète", "parcours": "mathens", "year": "l3", "page": ["licence"], "annexe": true} ,
+   {"code": "28473", "title": "M1 Maths MEEF", "label": "M1 MEEF", "parcours": "mathens", "year": "m1", "page": ["licence"]} ,
+   {"code": "28494", "title": "M2 Maths MEEF", "label": "M2 MEEF", "parcours": "mathens", "year": "m2", "page": ["licence"]} ,
+   {"code": "28281", "title": "M2 DIDACTIQUE SCIENCES - DIDACTIQUE MATHEMATIQUES - GM", "label": "M2 DID Maths", "parcours": "mathens", "year": "m2"} ,
+   {"code": "28315", "title": "M2 DIDACTIQUE SCIENCES - DIDAC FORM (MATH SCIEN NAT) - GM", "label": "M2 DID M-SN", "parcours": "mathens", "year": "m2"} ,
+   {"code": "28255", "title": "M2 DIDACTIQUE SCIENCES - DIDACTIQUE HISTOIRE ET GEO - GM", "label": "M2 DiID HG", "parcours": "mathens", "year": "m2"} ,
+   {"code": "28301", "title": "M2 DIDACTIQUE SCIENCES - DIDACTIQUE SCIENCES NATURE - GM", "label": "M2 DID SN", "parcours": "mathens", "year": "m2"}
+]

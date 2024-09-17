@@ -1,0 +1,51 @@
+[
+  {
+    "id": "miashs_l1",
+    "url": "https://cloud.math.univ-paris-diderot.fr/remote.php/dav/public-calendars/FCXoM8oFgcxgqDHG?export",
+    "label": "Remarques",
+    "parcours": "miashs",
+    "year": "l1"
+  },
+  {
+    "id": "miashs_l2",
+    "url": "https://cloud.math.univ-paris-diderot.fr/remote.php/dav/public-calendars/EGzssd2TqBtxGFKr?export",
+    "label": "Remarques",
+    "parcours": "miashs",
+    "year": "l2"
+  },
+  {
+    "id": "miashs_l3",
+    "url": "https://cloud.math.univ-paris-diderot.fr/remote.php/dav/public-calendars/B3s5Qk6a3oG2bQww?export",
+    "label": "Remarques",
+    "parcours": "miashs",
+    "year": "l3"
+  },
+  {
+    "id": "maths_m1mfa",
+    "url": "https://calendar.google.com/calendar/ical/m1mathsdiderot%40gmail.com/public/basic.ics",
+    "label": "Remarques M1 MFA",
+    "parcours": "math",
+    "year": "m1"
+  },
+  {
+    "id": "maths_m1isifar",
+    "url": "https://calendar.google.com/calendar/ical/gna6645rslsmf9bvi9he8t7cmo%40group.calendar.google.com/public/basic.ics",
+    "label": "Remarques M1 Isifar",
+    "parcours": "math",
+    "year": "m1"
+  },
+  {
+    "id": "maths_m1mi",
+    "url": "https://calendar.google.com/calendar/ical/g6mc1c0eqnidq7et8hbrfh2im0%40group.calendar.google.com/public/basic.ics",
+    "label": "Remarques M1 MIC/MIDS",
+    "parcours": "mathinfo",
+    "year": "m1"
+  },
+  {
+    "id": "maths_agregext",
+    "url": "https://cloud.math.univ-paris-diderot.fr/remote.php/dav/public-calendars/Z3fq5ZcAHK2ZnqXc?export",
+    "label": "Remarques Agreg Ext.",
+    "parcours": "math",
+    "year": "agreg"
+  }
+]

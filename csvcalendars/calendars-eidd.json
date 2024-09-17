@@ -1,0 +1,20 @@
+[
+   {"code": "14225", "title": "1A_BI_FISA", "label": "1A BI FISA", "parcours": "eidd", "year": "1A-S5"} ,
+   {"code": "14227", "title": "1A_FISE", "label": "1A FISE", "parcours": "eidd", "year": "1A-S5"} ,
+   {"code": "14226", "title": "1A_GBM_FISA", "label": "1A GBM FISA", "parcours": "eidd", "year": "1A-S5"} ,
+   {"code": "14309", "title": "1A_BI_FISA", "label": "1A BI-FISA", "parcours": "eidd", "year": "1A-S6"} ,
+   {"code": "14310", "title": "1A_GBM_FISA", "label": "1A GBM-FISA", "parcours": "eidd", "year": "1A-S6"} ,
+   {"code": "14313", "title": "1A_GP", "label": "1A GP", "parcours": "eidd", "year": "1A-S6"} ,
+   {"code": "14314", "title": "1A_MN", "label": "1A MN", "parcours": "eidd", "year": "1A-S6"} ,
+   {"code": "14311", "title": "1A_SIE", "label": "1A SIE", "parcours": "eidd", "year": "1A-S6"} ,
+   {"code": "14317", "title": "2A_BI_FISA", "label": "2A BI-FISA", "parcours": "eidd", "year": "2A"} ,
+   {"code": "14318", "title": "2A_BI_FISE", "label": "2A BI-FISE", "parcours": "eidd", "year": "2A"} ,
+   {"code": "14322", "title": "2A_GP", "label": "2A GP", "parcours": "eidd", "year": "2A"} ,
+   {"code": "14325", "title": "3A_GP", "label": "3A GP", "parcours": "eidd", "year": "3A"} ,
+   {"code": "14327", "title": "2A_MN", "label": "2A MN", "parcours": "eidd", "year": "2A"} ,
+   {"code": "14329", "title": "3A_MN", "label": "3A MN", "parcours": "eidd", "year": "3A"} ,
+   {"code": "14331", "title": "2A_SIE", "label": "2A SIE", "parcours": "eidd", "year": "2A"} ,
+   {"code": "14333", "title": "3A_SIE", "label": "3A SIE", "parcours": "eidd", "year": "3A"} ,
+   {"code": "14320", "title": "3A_BI_FISA", "label": "3A BI-FISA", "parcours": "eidd", "year": "3A"} ,
+   {"code": "14321", "title": "3A_BI_FISE", "label": "3A BI-FISE", "parcours": "eidd", "year": "3A"}
+]

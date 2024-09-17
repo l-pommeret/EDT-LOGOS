@@ -1,0 +1,5 @@
+Outils pour recréer le fichier calendars.json
+En particulier pour réordonner par parcours.
+
+Les fichiers calendars-*.json peuvent etre crees automatiquement par ../mkjson.py
+et aussi edites à la main puis refusionnés avec mergejson.py

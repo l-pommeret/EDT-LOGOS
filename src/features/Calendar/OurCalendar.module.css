@@ -1,0 +1,8 @@
+.source {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dashed {
+  border-style: dashed;
+}

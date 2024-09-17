@@ -1,0 +1,39 @@
+.fallback {
+    font-size: xx-large;
+}
+
+.spinner {
+    display: inline-block;
+    margin-inline: .25rem;
+    border-radius: 50%;
+    border: .25rem solid var(--brand);
+    border-color: var(--brand) transparent var(--brand) transparent;
+    animation: spinner 1.2s linear infinite;
+}
+
+.spinner::after {
+    content: "";
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    margin: .25rem;
+    border-radius: 50%;
+    background-color: var(--brand);
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.not-found {
+    font-size: xx-large;
+    color: red;
+    text-align: center;
+    margin-block-start: 1rem;
+}

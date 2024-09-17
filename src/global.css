@@ -1,0 +1,52 @@
+/* Global CSS styles. */
+
+@import "normalize.css";
+
+:root {
+  --brand: #8a1538;
+  --muted: #666;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.fc-toolbar-chunk {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fc-timegrid-event .fc-event-main {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding: .25rem;
+}
+
+.fc .fc-toolbar-chunk .fc-button {
+  display: block;
+}
+
+@media (max-width: 66ch) {
+  .fc-toolbar {
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+
+  .fc-toolbar-chunk {
+    inline-size: 100%;
+  }
+
+  .fc-button {
+    margin-left: 0;
+  }
+
+}

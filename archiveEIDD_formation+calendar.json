@@ -1,0 +1,17 @@
+------------ archive EIDD des 1A de formation.json --------------
+
+    { "code": "", "title": "eidd 1A-S2", "fiches": "8090,162,8094,8095,8096"},
+    { "code": "", "title": "eidd 1A-S1", "fiches": "5660,8476,161"},
+
+
+------------ archive EIDD des 1A de calendar.json  ----------------
+
+ { "code" : 8090  , "title" : "EIDD 1A"    , "label" : "1A GB-FISA" , "parcours" : "eidd" , "year" : "1A-S2" , "page" : ["eidd"] },
+ { "code" : 162  , "title" : "EIDD 1A"    , "label" : "1A GB-FISE" , "parcours" : "eidd" , "year" : "1A-S2" , "page" : ["eidd"] },
+ { "code" : 8094  , "title" : "EIDD 1A"    , "label" : "1A GP" , "parcours" : "eidd" , "year" : "1A-S2" , "page" : ["eidd"] },
+ { "code" : 8095  , "title" : "EIDD 1A"    , "label" : "1A MN" , "parcours" : "eidd" , "year" : "1A-S2" , "page" : ["eidd"] },
+ { "code" : 8096  , "title" : "EIDD 1A"    , "label" : "1A SIE" , "parcours" : "eidd" , "year" : "1A-S2" , "page" : ["eidd"] },
+ { "code" : 5660  , "title" : "EIDD 1A"    , "label" : "1A EIDD" , "parcours" : "eidd" , "year" : "1A-S1" , "page" : ["eidd"] },
+ { "code" : 8476  , "title" : "EIDD 1A"    , "label" : "1A GB-FISA" , "parcours" : "eidd" , "year" : "1A-S1" , "page" : ["eidd"] },
+ { "code" : 161  , "title" : "EIDD 1A"    , "label" : "1A GB-FISE" , "parcours" : "eidd" , "year" : "1A-S1" , "page" : ["eidd"] },
+ 

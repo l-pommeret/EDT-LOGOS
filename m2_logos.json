@@ -1,0 +1,90 @@
+{
+    "masters": [
+      {
+        "name": "M2 LMFI",
+        "code": "28347",
+        "courses": [
+          "Theorie des ensembles CM01",
+          "Theorie des ensembles TD01",
+          "Theorie des Modeles : cours specialise CM01",
+          "Theorie des modeles TD01",
+          "Theorie categories & algebres homotopiques, categories sup CM01",
+          "Programmation fonctionnelle et preuves formelles en coq TP01",
+          "Calculabilite et incompletude CM01",
+          "Theorie de la demonstration CM01",
+          "Theorie de la demonstration TD01"
+        ]
+      },
+      {
+        "name": "M2 MIDS",
+        "code": "28457",
+        "courses": [
+          "Introduction au machine learning CM01"
+        ]
+      },
+      {
+        "name": "M2 MPRI",
+        "code": "14626",
+        "courses": [
+          "Complexite randomisee",
+          "Calculs sur les reels: modeles,calculabilite,complexite"
+        ]
+      }
+    ],
+    "constant_events": [
+      {
+        "type": "one-time",
+        "summary": "Réunion de rentrée du LOGOS",
+        "date": "2024-09-24",
+        "time": "10:00",
+        "duration": 90,
+        "room": "Quelque part sur Terre",
+        "enabled": true
+      }, 
+      {
+        "type": "weekly",
+        "summary": "Philosophie de la connaissance",
+        "day": "Lundi",
+        "time": "16:30",
+        "duration": 120,
+        "room": "Salle 117 - Olympes de Gouges",
+        "enabled": true
+      },
+      {
+        "type": "weekly",
+        "summary": "Machine learning for NLP 3",
+        "day": "Jeudi",
+        "time": "15:00",
+        "duration": 120,
+        "room": "Salle 309 - Olympes de Gouges",
+        "enabled": false
+      },
+      {
+        "type": "weekly",
+        "summary": "Machine learning for NLP 3",
+        "day": "Vendredi",
+        "time": "10:45",
+        "duration": 120,
+        "room": "Salle 309 - Olympes de Gouges",
+        "enabled": false
+      },
+      {
+        "type": "weekly",
+        "summary": "Machine learning for NLP 3",
+        "day": "Vendredi",
+        "time": "14:00",
+        "duration": 120,
+        "room": "Salle 309 - Olympes de Gouges",
+        "enabled": false
+      },
+      {
+        "type": "weekly",
+        "summary": "Semantic Analysis",
+        "day": "Mercredi",
+        "time": "9:30",
+        "duration": 150,
+        "room": "Salle 165 - Olympes de Gouges",
+        "enabled": false
+      }
+  ]
+}

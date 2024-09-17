@@ -1,0 +1,10 @@
+[
+   {"code": "6532", "title": "CUPGE", "label": "CUPGE1", "parcours": "cupge", "year": "l1", "page": ["licence"]} ,
+   {"code": "6533", "title": "CUPGE", "label": "CUPGE2", "parcours": "cupge", "year": "l1", "page": ["licence"]} ,
+   {"code": "6534", "title": "DLPC", "label": "DLPC", "parcours": "cupge", "year": "l1", "page": ["licence"]} ,
+   {"code": "11220", "title": "DLPM", "label": "DLPM", "parcours": "cupge", "year": "l1", "page": ["licence"]} ,
+   {"code": "obso-cupgel1", "title": "AncVersion", "label": "obsolète", "parcours": "cupge", "year": "l1", "page": ["licence"], "annexe": true} ,
+   {"code": "6652", "title": "CUPGE", "label": "CUPGE1", "parcours": "cupge", "year": "l2", "page": ["licence"]} ,
+   {"code": "6653", "title": "CUPGE", "label": "CUPGE2", "parcours": "cupge", "year": "l2", "page": ["licence"]} ,
+   {"code": "obso-cupgel2", "title": "AncVersion", "label": "obsolète", "parcours": "cupge", "year": "l2", "page": ["licence"], "annexe": true}
+]

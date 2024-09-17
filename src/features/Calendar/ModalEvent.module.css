@@ -1,0 +1,68 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: grayscale(100%) blur(1px);
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+.modal article {
+  cursor: auto;
+  max-width: 60ch;
+  display: grid;
+  align-items: baseline;
+  grid-template-areas:
+    "title title btn"
+    "body body body"
+    "foot foot foot";
+  grid-template-columns: 1fr 1fr auto;
+  box-shadow: 1px 1px 5px 2px black;
+}
+
+.modal article header {
+  grid-area: title;
+  padding: 0.25rem;
+}
+
+.modal article button {
+  grid-area: btn;
+  display: block;
+  font-size: large;
+  padding: 0.25rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal article button:hover {
+  background-color: var(--brand);
+  color: white;
+}
+
+.modal article div {
+  grid-area: body;
+  border-top: 1px solid black;
+  padding: 0.5rem;
+}
+
+.modal article div h2 {
+  margin: 0;
+}
+
+.modal article div p:first-of-type {
+  text-transform: capitalize;
+}
+
+.modal article footer {
+  grid-area: foot;
+  padding: 0.25rem;
+  border-top: 1px dotted black;
+  font-size: small;
+  letter-spacing: 0px;
+}
