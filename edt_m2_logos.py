@@ -164,7 +164,7 @@ def main():
         "slotMinTime": "08:00:00",
         "slotMaxTime": "20:00:00",
         "allDaySlot": False,
-        "height": 600,
+        "height": 700,
         "locale": "fr",
         "firstDay": 1,  # Lundi comme premier jour de la semaine
         "events": logos_calendar
