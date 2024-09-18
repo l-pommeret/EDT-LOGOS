@@ -2,8 +2,8 @@ import streamlit as st
 from streamlit_calendar import calendar
 import json
 from datetime import datetime, timedelta
-from get_ical import fetch_ical, fix_timezone, modif_vevent, re_vevent
 import re
+from get_ical import fetch_ical, fix_timezone, modif_vevent, re_vevent
 
 st.set_page_config(layout="wide")
 
@@ -21,7 +21,7 @@ def load_masters_config(file_path: str):
         st.error(f"Le fichier {file_path} n'est pas un JSON valide.")
         return {"masters": [], "constant_events": []}
 
-def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str):
+def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str, json_names):
     try:
         ical = fetch_ical(code, start, end, year, fiche_etalon)
         ical_fixed = fix_timezone(ical, code)
@@ -41,12 +41,19 @@ def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str)
             if summary_match and dtstart_match and dtend_match:
                 start_time = datetime.strptime(dtstart_match.group(1), "%Y%m%dT%H%M%S")
                 end_time = datetime.strptime(dtend_match.group(1), "%Y%m%dT%H%M%S")
+                location = location_match.group(1) if location_match else "Non spécifié"
+                summary = summary_match.group(1)
+                
+                # Utiliser le nom du JSON s'il existe, sinon utiliser le nom original
+                json_name = next((name for name in json_names if name in summary), summary)
+                
                 cours_info = {
-                    "title": summary_match.group(1),
+                    "title": f"{json_name} - {location}",
                     "start": start_time.isoformat(),
                     "end": end_time.isoformat(),
                     "extendedProps": {
-                        "location": location_match.group(1) if location_match else "Non spécifié"
+                        "location": location,
+                        "original_summary": summary
                     }
                 }
                 tous_les_cours.append(cours_info)
@@ -57,7 +64,7 @@ def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str)
         return []
 
 def filter_courses(all_courses, selected_courses):
-    return [course for course in all_courses if any(selected in course['title'] for selected in selected_courses)]
+    return [course for course in all_courses if any(selected in course['extendedProps']['original_summary'] for selected in selected_courses)]
 
 def main():
     st.title("Calendrier interactif M2 LOGOS")
@@ -69,9 +76,10 @@ def main():
     fiche_etalon = "58598,"
 
     all_courses = []
+    json_names = [course for master in config['masters'] for course in master['courses']]
     for master in config['masters']:
         with st.spinner(f"Récupération des cours pour {master['name']}..."):
-            master_courses = fetch_courses(master['code'], start_date, end_date, annee_academique, fiche_etalon)
+            master_courses = fetch_courses(master['code'], start_date, end_date, annee_academique, fiche_etalon, json_names)
             all_courses.extend(master_courses)
 
     if not all_courses:
@@ -132,7 +140,7 @@ def main():
             if event['type'] == 'weekly':
                 # Créer un événement récurrent
                 logos_calendar.append({
-                    'title': event['summary'],
+                    'title': f"{event['summary']} - {event['room']}",
                     'daysOfWeek': [['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'].index(event['day']) + 1],
                     'startTime': event['time'],
                     'endTime': (datetime.strptime(event['time'], '%H:%M') + timedelta(minutes=event['duration'])).strftime('%H:%M'),
@@ -145,7 +153,7 @@ def main():
                 start_datetime = f"{event['date']}T{event['time']}"
                 end_datetime = (datetime.fromisoformat(start_datetime) + timedelta(minutes=event['duration'])).isoformat()
                 logos_calendar.append({
-                    'title': event['summary'],
+                    'title': f"{event['summary']} - {event['room']}",
                     'start': start_datetime,
                     'end': end_datetime,
                     'extendedProps': {
@@ -167,7 +175,9 @@ def main():
         "height": 700,
         "locale": "fr",
         "firstDay": 1,  # Lundi comme premier jour de la semaine
-        "events": logos_calendar
+        "events": logos_calendar,
+        "hiddenDays": [0, 6],  # Cache le dimanche (0) et le samedi (6)
+        "weekends": False  # Désactive l'affichage des week-ends
     }
 
     # Affichage du calendrier
