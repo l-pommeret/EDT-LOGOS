@@ -1,88 +1,150 @@
 {
     "masters": [
+    {
+     "name": "M2 LMFI",
+     "code": "28347",
+     "courses": [
       {
-        "name": "M2 LMFI",
-        "code": "28347",
-        "courses": [
-          "Theorie des ensembles",
-          "Theorie des Modeles : cours specialise CM01",
-          "Theorie des modeles TD01",
-          "Theorie categories",
-          "Programmation fonctionnelle et preuves formelles en coq TP01",
-          "Calculabilite et incompletude CM01",
-          "Theorie de la demonstration"
-        ]
+       "name": "Theorie des ensembles",
+       "displayName": "Théorie des ensembles",
+       "color": "#8B0000",
+       "groupId": "theorie_ensembles"
       },
       {
-        "name": "M2 MIDS",
-        "code": "28457",
-        "courses": [
-          "Introduction au machine learning CM01"
-        ]
+       "name": "Theorie des Modeles : cours specialise CM01",
+       "displayName": "Théorie des modèles",
+       "color": "#006400",
+       "groupId": "theorie_modeles"
       },
       {
-        "name": "M2 MPRI",
-        "code": "14626",
-        "courses": [
-          "Complexite randomisee",
-          "Calculs sur les reels:"
-        ]
+       "name": "Theorie des modeles TD01",
+       "displayName": "TD Théorie des modèles",
+       "color": "#006400",
+       "groupId": "theorie_modeles"
+      },
+      {
+       "name": "Theorie categories",
+       "displayName": "Théorie des catégories",
+       "color": "#8B008B",
+       "groupId": "theorie_categories"
+      },
+      {
+       "name": "Programmation fonctionnelle et preuves formelles en coq TP01",
+       "displayName": "Prog. fonctionnelle Coq",
+       "color": "#008080",
+       "groupId": "prog_coq"
+      },
+      {
+       "name": "Calculabilite et incompletude CM01",
+       "displayName": "Calculabilité",
+       "color": "#8B4513",
+       "groupId": "calculabilite"
+      },
+      {
+       "name": "Theorie de la demonstration",
+       "displayName": "Théorie de la démonstration",
+       "color": "#4B0082",
+       "groupId": "theorie_demonstration"
       }
+     ]
+    },
+    {
+     "name": "M2 MIDS",
+     "code": "28457",
+     "courses": [
+      {
+       "name": "Introduction au machine learning CM01",
+       "displayName": "Intro. au Machine Learning",
+       "color": "#006666",
+       "groupId": "intro_ml"
+      }
+     ]
+    },
+    {
+     "name": "M2 MPRI",
+     "code": "14626",
+     "courses": [
+      {
+       "name": "Complexite randomisee",
+       "displayName": "Complexité randomisée",
+       "color": "#8B4500",
+       "groupId": "complexite_randomisee"
+      },
+      {
+       "name": "Calculs sur les reels:",
+       "displayName": "Calculs réels",
+       "color": "#000080",
+       "groupId": "calculs_reels"
+      }
+     ]
+    }
     ],
-    "constant_events": [
-      {
-        "type": "one-time",
-        "summary": "Réunion de rentrée du LOGOS",
-        "date": "2024-09-24",
-        "time": "10:00",
-        "duration": 90,
-        "room": "Quelque part sur Terre",
-        "enabled": true
-      }, 
-      {
-        "type": "weekly",
-        "summary": "Philosophie de la connaissance",
-        "day": "Lundi",
-        "time": "16:30",
-        "duration": 120,
-        "room": "Salle 117 - Olympes de Gouges",
-        "enabled": true
-      },
-      {
-        "type": "weekly",
-        "summary": "Machine learning for NLP 3",
-        "day": "Jeudi",
-        "time": "15:00",
-        "duration": 120,
-        "room": "Salle 309 - Olympes de Gouges",
-        "enabled": false
-      },
-      {
-        "type": "weekly",
-        "summary": "Machine learning for NLP 3",
-        "day": "Vendredi",
-        "time": "10:45",
-        "duration": 120,
-        "room": "Salle 309 - Olympes de Gouges",
-        "enabled": false
-      },
-      {
-        "type": "weekly",
-        "summary": "Machine learning for NLP 3",
-        "day": "Vendredi",
-        "time": "14:00",
-        "duration": 120,
-        "room": "Salle 309 - Olympes de Gouges",
-        "enabled": false
-      },
-      {
-        "type": "weekly",
-        "summary": "Semantic Analysis",
-        "day": "Mercredi",
-        "time": "9:30",
-        "duration": 150,
-        "room": "Salle 165 - Olympes de Gouges",
-        "enabled": false
-      }
-  ]
-}
+   "constant_events": [
+    {
+     "type": "one-time",
+     "summary": "Réunion de rentrée du LOGOS",
+     "date": "2024-09-24",
+     "time": "10:00",
+     "duration": 90,
+     "room": "Quelque part sur Terre",
+     "enabled": true,
+     "color": "#8B0000",
+     "groupId": "reunion_logos"
+    },
+    {
+     "type": "weekly",
+     "summary": "Philosophie de la connaissance",
+     "day": "Lundi",
+     "time": "16:30",
+     "duration": 120,
+     "room": "Salle 117 - Olympes de Gouges",
+     "enabled": true,
+     "color": "#4B0082",
+     "groupId": "philo_connaissance"
+    },
+    {
+     "type": "weekly",
+     "summary": "Machine learning for NLP 3",
+     "day": "Jeudi",
+     "time": "15:00",
+     "duration": 120,
+     "room": "Salle 309 - Olympes de Gouges",
+     "enabled": false,
+     "color": "#006400",
+     "groupId": "ml_nlp"
+    },
+    {
+     "type": "weekly",
+     "summary": "Machine learning for NLP 3",
+     "day": "Vendredi",
+     "time": "10:45",
+     "duration": 120,
+     "room": "Salle 309 - Olympes de Gouges",
+     "enabled": false,
+     "color": "#006400",
+     "groupId": "ml_nlp"
+    },
+    {
+     "type": "weekly",
+     "summary": "Machine learning for NLP 3",
+     "day": "Vendredi",
+     "time": "14:00",
+     "duration": 120,
+     "room": "Salle 309 - Olympes de Gouges",
+     "enabled": false,
+     "color": "#006400",
+     "groupId": "ml_nlp"
+    },
+    {
+     "type": "weekly",
+     "summary": "Semantic Analysis",
+     "day": "Mercredi",
+     "time": "9:30",
+     "duration": 150,
+     "room": "Salle 165 - Olympes de Gouges",
+     "enabled": false,
+     "color": "#4B0082",
+     "groupId": "semantic_analysis"
+    }
+    ]
+   }

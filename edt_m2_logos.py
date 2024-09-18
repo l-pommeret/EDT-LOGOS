@@ -13,6 +13,10 @@ def load_masters_config(file_path: str):
             config = json.load(f)
         if 'constant_events' not in config:
             config['constant_events'] = []
+        # Vérification de la structure des cours
+        for master in config['masters']:
+            if not all(isinstance(course, dict) and 'name' in course and 'displayName' in course and 'color' in course for course in master['courses']):
+                raise ValueError("La structure des cours dans le fichier JSON est incorrecte.")
         return config
     except FileNotFoundError:
         st.error(f"Le fichier de configuration {file_path} n'a pas été trouvé.")
@@ -20,8 +24,11 @@ def load_masters_config(file_path: str):
     except json.JSONDecodeError:
         st.error(f"Le fichier {file_path} n'est pas un JSON valide.")
         return {"masters": [], "constant_events": []}
+    except ValueError as e:
+        st.error(str(e))
+        return {"masters": [], "constant_events": []}
 
-def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str, json_names):
+def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str, json_courses):
     try:
         ical = fetch_ical(code, start, end, year, fiche_etalon)
         ical_fixed = fix_timezone(ical, code)
@@ -44,19 +51,20 @@ def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str,
                 location = location_match.group(1) if location_match else "Non spécifié"
                 summary = summary_match.group(1)
                 
-                # Utiliser le nom du JSON s'il existe, sinon utiliser le nom original
-                json_name = next((name for name in json_names if name in summary), summary)
+                json_course = next((course for course in json_courses if course['name'] in summary), None)
                 
-                cours_info = {
-                    "title": f"{json_name} - {location}",
-                    "start": start_time.isoformat(),
-                    "end": end_time.isoformat(),
-                    "extendedProps": {
-                        "location": location,
-                        "original_summary": summary
+                if json_course:
+                    cours_info = {
+                        "title": f"{json_course['displayName']} - {location}",
+                        "start": start_time.isoformat(),
+                        "end": end_time.isoformat(),
+                        "backgroundColor": json_course['color'],
+                        "extendedProps": {
+                            "location": location,
+                            "original_summary": summary
+                        }
                     }
-                }
-                tous_les_cours.append(cours_info)
+                    tous_les_cours.append(cours_info)
         
         return tous_les_cours
     except Exception as e:
@@ -65,6 +73,31 @@ def fetch_courses(code: str, start: str, end: str, year: int, fiche_etalon: str,
 
 def filter_courses(all_courses, selected_courses):
     return [course for course in all_courses if any(selected in course['extendedProps']['original_summary'] for selected in selected_courses)]
+
+def create_constant_event(event, is_weekly):
+    if is_weekly:
+        return {
+            'title': f"{event['summary']} - {event['room']}",
+            'daysOfWeek': [['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'].index(event['day']) + 1],
+            'startTime': event['time'],
+            'endTime': (datetime.strptime(event['time'], '%H:%M') + timedelta(minutes=event['duration'])).strftime('%H:%M'),
+            'backgroundColor': event.get('color', '#808080'),  # Gris par défaut si pas de couleur spécifiée
+            'extendedProps': {
+                'location': event['room']
+            }
+        }
+    else:
+        start_datetime = f"{event['date']}T{event['time']}"
+        end_datetime = (datetime.fromisoformat(start_datetime) + timedelta(minutes=event['duration'])).isoformat()
+        return {
+            'title': f"{event['summary']} - {event['room']}",
+            'start': start_datetime,
+            'end': end_datetime,
+            'backgroundColor': event.get('color', '#808080'),  # Gris par défaut si pas de couleur spécifiée
+            'extendedProps': {
+                'location': event['room']
+            }
+        }
 
 def main():
     st.title("Calendrier interactif M2 LOGOS")
@@ -76,35 +109,60 @@ def main():
     fiche_etalon = "58598,"
 
     all_courses = []
-    json_names = [course for master in config['masters'] for course in master['courses']]
+    json_courses = [course for master in config['masters'] for course in master['courses']]
     for master in config['masters']:
         with st.spinner(f"Récupération des cours pour {master['name']}..."):
-            master_courses = fetch_courses(master['code'], start_date, end_date, annee_academique, fiche_etalon, json_names)
+            master_courses = fetch_courses(master['code'], start_date, end_date, annee_academique, fiche_etalon, json_courses)
             all_courses.extend(master_courses)
 
     if not all_courses:
         st.warning("Aucun cours n'a pu être récupéré. Le calendrier sera vide (rechargez la page dans 1h, c'est probablement une erreur venant d'ADE).")
 
-    st.header("Sélection des cours")
+    st.header("Mathématiques, logique, informatique")
     selected_courses = []
+    grouped_courses = {}
     for master in config['masters']:
-        st.subheader(master['name'])
         for course in master['courses']:
-            if st.checkbox(course, key=f"{master['name']}_{course}"):
-                selected_courses.append(course)
+            if course['groupId'] not in grouped_courses:
+                grouped_courses[course['groupId']] = {
+                    'displayName': course['displayName'],
+                    'names': [course['name']]
+                }
+            else:
+                grouped_courses[course['groupId']]['names'].append(course['name'])
+
+    for group_id, group_info in grouped_courses.items():
+        if st.checkbox(group_info['displayName'], key=f"group_{group_id}"):
+            selected_courses.extend(group_info['names'])
 
     st.header("Philosophie, linguistique et événements constants")
     
-    for i, event in enumerate(config['constant_events']):
+    grouped_events = {}
+    for event in config['constant_events']:
+        if event['groupId'] not in grouped_events:
+            grouped_events[event['groupId']] = {
+                'summary': event['summary'],
+                'events': [event]
+            }
+        else:
+            grouped_events[event['groupId']]['events'].append(event)
+
+    for group_id, group_info in grouped_events.items():
         col1, col2 = st.columns([3, 1])
         with col1:
-            if event['type'] == 'weekly':
-                st.write(f"{event['summary']} - {event['day']} à {event['time']} ({event['duration']} min) - {event['room']}")
-            elif event['type'] == 'one-time':
-                st.write(f"{event['summary']} - {event['date']} à {event['time']} ({event['duration']} min) - {event['room']}")
+            if len(group_info['events']) > 1:
+                st.write(f"{group_info['summary']} (plusieurs sessions)")
+            else:
+                event = group_info['events'][0]
+                if event['type'] == 'weekly':
+                    st.write(f"{event['summary']} - {event['day']} à {event['time']} ({event['duration']} min) - {event['room']}")
+                elif event['type'] == 'one-time':
+                    st.write(f"{event['summary']} - {event['date']} à {event['time']} ({event['duration']} min) - {event['room']}")
         with col2:
-            config['constant_events'][i]['enabled'] = st.checkbox("Activer", value=event['enabled'], key=f"event_{i}")
-    
+            enabled = st.checkbox("Activer", value=group_info['events'][0]['enabled'], key=f"event_{group_id}")
+            for event in group_info['events']:
+                event['enabled'] = enabled
+
     with st.expander("Ajouter un nouvel événement constant"):
         with st.form("new_constant_event"):
             event_type = st.selectbox("Type d'événement", ['weekly', 'one-time'])
@@ -116,6 +174,7 @@ def main():
             event_time = st.time_input("Heure de début")
             event_duration = st.number_input("Durée (en minutes)", min_value=15, step=15)
             event_room = st.text_input("Salle")
+            event_color = st.color_picker("Couleur de l'événement", '#808080')
             if st.form_submit_button("Ajouter l'événement constant"):
                 new_event = {
                     'type': event_type,
@@ -123,7 +182,8 @@ def main():
                     'time': event_time.strftime('%H:%M'),
                     'duration': event_duration,
                     'room': event_room,
-                    'enabled': True
+                    'enabled': True,
+                    'color': event_color
                 }
                 if event_type == 'weekly':
                     new_event['day'] = event_day
@@ -137,29 +197,7 @@ def main():
     # Ajout des événements constants au calendrier
     for event in config['constant_events']:
         if event['enabled']:
-            if event['type'] == 'weekly':
-                # Créer un événement récurrent
-                logos_calendar.append({
-                    'title': f"{event['summary']} - {event['room']}",
-                    'daysOfWeek': [['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'].index(event['day']) + 1],
-                    'startTime': event['time'],
-                    'endTime': (datetime.strptime(event['time'], '%H:%M') + timedelta(minutes=event['duration'])).strftime('%H:%M'),
-                    'extendedProps': {
-                        'location': event['room']
-                    }
-                })
-            elif event['type'] == 'one-time':
-                # Créer un événement unique
-                start_datetime = f"{event['date']}T{event['time']}"
-                end_datetime = (datetime.fromisoformat(start_datetime) + timedelta(minutes=event['duration'])).isoformat()
-                logos_calendar.append({
-                    'title': f"{event['summary']} - {event['room']}",
-                    'start': start_datetime,
-                    'end': end_datetime,
-                    'extendedProps': {
-                        'location': event['room']
-                    }
-                })
+            logos_calendar.append(create_constant_event(event, event['type'] == 'weekly'))
 
     # Configuration du calendrier
     calendar_options = {
@@ -175,7 +213,6 @@ def main():
         "height": 700,
         "locale": "fr",
         "firstDay": 1,  # Lundi comme premier jour de la semaine
-        "events": logos_calendar,
         "hiddenDays": [0, 6],  # Cache le dimanche (0) et le samedi (6)
         "weekends": False  # Désactive l'affichage des week-ends
     }
