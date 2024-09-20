@@ -84,9 +84,9 @@
      "type": "one-time",
      "summary": "Réunion de rentrée du LOGOS",
      "date": "2024-09-24",
-     "time": "10:00",
-     "duration": 90,
-     "room": "Quelque part sur Terre",
+     "time": "12:30",
+     "duration": 60,
+     "room": "Salle 126 - Olympes de Gouges",
      "enabled": true,
      "color": "#8B0000",
      "groupId": "reunion_logos"
