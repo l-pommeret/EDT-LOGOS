@@ -135,6 +135,17 @@
         "color": "#8B0000",
         "groupId": "reunion_logos"
        },
+       {
+        "type": "one-time",
+        "summary": "Workshop LOGOS",
+        "date": "2025-01-17",
+        "time": "09:00",
+        "duration": 720,
+        "room": "Salle 126 - Olympes de Gouges",
+        "enabled": true,
+        "color": "#8B0000",
+        "groupId": "reunion_logos"
+       },
     {
      "type": "weekly",
      "summary": "Philosophie de la connaissance",
