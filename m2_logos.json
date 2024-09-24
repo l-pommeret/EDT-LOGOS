@@ -92,6 +92,50 @@
      "groupId": "reunion_logos"
     },
     {
+        "type": "one-time",
+        "summary": "Michel de Rougemont",
+        "date": "2024-10-15",
+        "time": "12:30",
+        "duration": 60,
+        "room": "Salle à déterminer",
+        "enabled": true,
+        "color": "#8B0000",
+        "groupId": "reunion_logos"
+       },
+       {
+        "type": "one-time",
+        "summary": "Boban Velickovic",
+        "date": "2024-11-5",
+        "time": "12:30",
+        "duration": 60,
+        "room": "Salle 126 - Olympes de Gouges",
+        "enabled": true,
+        "color": "#8B0000",
+        "groupId": "reunion_logos"
+       },
+       {
+        "type": "one-time",
+        "summary": "Brice Halimi",
+        "date": "2024-11-26",
+        "time": "12:30",
+        "duration": 60,
+        "room": "Salle 126 - Olympes de Gouges",
+        "enabled": true,
+        "color": "#8B0000",
+        "groupId": "reunion_logos"
+       },
+       {
+        "type": "one-time",
+        "summary": "Jonathan Ginzburg",
+        "date": "2024-12-17",
+        "time": "12:30",
+        "duration": 60,
+        "room": "Salle 126 - Olympes de Gouges",
+        "enabled": true,
+        "color": "#8B0000",
+        "groupId": "reunion_logos"
+       },
+    {
      "type": "weekly",
      "summary": "Philosophie de la connaissance",
      "day": "Lundi",
