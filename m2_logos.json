@@ -105,7 +105,7 @@
        {
         "type": "one-time",
         "summary": "Boban Velickovic",
-        "date": "2024-11-5",
+        "date": "2024-11-05",
         "time": "12:30",
         "duration": 60,
         "room": "Salle 126 - Olympes de Gouges",
@@ -125,7 +125,7 @@
         "groupId": "reunion_logos"
        },
        {
-        "type": "one-time",
+        "type": "weekly",
         "summary": "Jonathan Ginzburg",
         "date": "2024-12-17",
         "time": "12:30",
